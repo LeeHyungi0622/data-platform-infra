@@ -2,9 +2,9 @@
 
 # 데이터 플랫폼 구성
 
-## Hadoop EcoSystem Docker container 구성
+## <u>Hadoop EcoSystem Docker container 구성</u>
 
-### Hadoop EcoSystem version 구성 
+### <u>Hadoop EcoSystem version 구성</u>
 
 `yellow : 작성완료` `pink : 진행중`
 <table>
@@ -59,7 +59,7 @@
 </table>
 
 
-### Docker container Port 구성 및 설정
+### <u>Docker container Port 구성 및 설정</u>
 
 <table>
     <tr>
@@ -87,28 +87,44 @@
             </div>
             <br/>
             <div class="align-center">
-                [NameNode 02] <br/> - 50070 (NameNoe Web UI)<br/>- 8089 (YARN RM Web UI)<br/>
+                [NameNode 02] <br/> - 50080 (NameNoe Web UI)<br/>- 8089 (YARN RM Web UI)<br/>
             </div>
         </td>
     </tr>
     <tr style="text-align: center">
         <td>4</td>
         <td>Hive</td>
-        <td></td>
+        <td>
+            <div class="align-center">
+                [HiveServer 01] <br/> - 10000
+            </div>
+            <br/>
+            <div class="align-center">
+                [HiveServer 02] <br/> - 10001
+            </div>
+        </td>
     </tr>
     <tr style="text-align: center">
         <td>5</td>
         <td>Tez</td>
-        <td></td>
+        <td>(Hive Execution Engine)</td>
     </tr>
     <tr style="text-align: center">
         <td>6</td>
         <td>HBase</td>
-        <td></td>
+        <td>
+            <div class="align-center">
+                [HMaster 01 / 02] <br/> - 16000 / TBD
+            </div>
+            <br/>
+            <div class="align-center">
+                [HRegionServer 01 / 02 / 03] <br/> - 16020 / TBD / TBD
+            </div>
+        </td>
     </tr>
     <tr style="text-align: center">
         <td>7</td>
         <td>Phoenix</td>
-        <td></td>
+        <td>8765</td>
     </tr>
 </table>
