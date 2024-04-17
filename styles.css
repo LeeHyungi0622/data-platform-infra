@@ -10,3 +10,7 @@ th, tr {
 .complete {
     color: yellow;
 }
+
+.progress {
+    color: pink;
+}
