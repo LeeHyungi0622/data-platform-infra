@@ -14,3 +14,11 @@ th, tr {
 .progress {
     color: pink;
 }
+
+.list-up {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}

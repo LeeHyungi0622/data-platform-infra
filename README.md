@@ -6,7 +6,7 @@
 
 ### Hadoop EcoSystem version 구성 
 
-`yellow : 작성완료` `pink : `
+`yellow : 작성완료` `pink : 진행중`
 <table>
     <tr>
         <th style="text-align: center">index</th>
@@ -59,4 +59,56 @@
 </table>
 
 
-### Docker container Port 구성
+### Docker container Port 구성 및 설정
+
+<table>
+    <tr>
+        <th style="text-align: center">index</th>
+        <th style="text-align: center">component</th>
+        <th style="text-align: center">port</th>
+        <th style="text-align: center">Configuration</th>
+    </tr>
+    <tr style="text-align: center">
+        <td class="complete">1</td>
+        <td class="complete">Zookeeper</td>
+        <td class="complete">2181, 2182, 2183</td>
+    </tr>
+    <tr style="text-align: center">
+        <td class="complete">2</td>
+        <td class="complete">Kafka</td>
+        <td class="complete">29092, 39092, 49092</td>
+    </tr>
+    <tr style="text-align: center">
+        <td class="progress">3</td>
+        <td class="progress">Hadoop</td>
+        <td class="progress align-center">
+            <div class="align-center">
+                [NameNode 01] <br/> - 50070 (NameNode Web UI)<br/>- 8088 (YARN RM Web UI)<br/>
+            </div>
+            <br/>
+            <div class="align-center">
+                [NameNode 02] <br/> - 50070 (NameNoe Web UI)<br/>- 8089 (YARN RM Web UI)<br/>
+            </div>
+        </td>
+    </tr>
+    <tr style="text-align: center">
+        <td>4</td>
+        <td>Hive</td>
+        <td></td>
+    </tr>
+    <tr style="text-align: center">
+        <td>5</td>
+        <td>Tez</td>
+        <td></td>
+    </tr>
+    <tr style="text-align: center">
+        <td>6</td>
+        <td>HBase</td>
+        <td></td>
+    </tr>
+    <tr style="text-align: center">
+        <td>7</td>
+        <td>Phoenix</td>
+        <td></td>
+    </tr>
+</table>
