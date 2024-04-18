@@ -56,6 +56,12 @@
         <td>자체 제작 이미지 사용</td>
         <td>5.1.3</td>
     </tr>
+    <tr style="text-align: center">
+        <td>8</td>
+        <td>PostgreSQL</td>
+        <td>Docker official image</td>
+        <td></td>
+    </tr>
 </table>
 
 
