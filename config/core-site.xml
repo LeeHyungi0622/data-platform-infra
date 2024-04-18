@@ -1,0 +1,17 @@
+<configuration>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/opt/hadoop/dfs/temp</value>
+    </property>
+
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hadoop-cluster</value>
+        <final>true</final>
+    </property>
+
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>zoo-1:2181,zoo-2:2182,zoo-3:2183</value>
+    </property>
+</configuration>

@@ -25,16 +25,5 @@ if (process.argv[2] === "hdfs") {
     if (process.argv[3] === "build") {
         execSync("docker build -t hadoop_base:latest .")
     }
-// Hive server 실행 분기문
-} else if (process.argv[2] === "hive") {
-    // 3
-    if (process.argv[3] === "build") {
-        execSync("docker build -t hadoop_base:latest .")
-    }
-// Hive metastore 실행 분기문
-} else if (process.argv[2] === "metastore") {
-    if (process.argv[3] === "build") {
-        execSync("docker build -t hadoop_base:latest .")
-    }
 }
 
