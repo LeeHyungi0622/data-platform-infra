@@ -27,3 +27,8 @@ if (process.argv[2] === "hdfs") {
     }
 }
 
+if (process.argv[2] === "metastore") {
+    if (process.argv[3] === "build") {
+        execSync("docker pull postgres:15.6")
+    }
+} 

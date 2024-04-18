@@ -83,7 +83,7 @@
         <td>8</td>
         <td>PostgreSQL</td>
         <td>Docker official image</td>
-        <td></td>
+        <td>15.6</td>
     </tr>
 </table>
 
