@@ -50,10 +50,10 @@
         <td class="complete">7.4.4</td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">3</td>
-        <td class="progress">Hadoop</td>
-        <td class="progress">자체 제작 이미지 사용</td>
-        <td class="progress">3.3.6</td>
+        <td class="complete">3</td>
+        <td class="complete">Hadoop</td>
+        <td class="complete">자체 제작 이미지 사용</td>
+        <td class="complete">3.3.6</td>
     </tr>
     <tr style="text-align: center">
         <td>4</td>
@@ -80,10 +80,10 @@
         <td>5.1.3</td>
     </tr>
     <tr style="text-align: center">
-        <td>8</td>
-        <td>PostgreSQL</td>
-        <td>Docker official image</td>
-        <td>15.6</td>
+        <td class="complete">8</td>
+        <td class="complete">PostgreSQL</td>
+        <td class="complete">Docker official image</td>
+        <td class="complete">15.6</td>
     </tr>
 </table>
 
@@ -128,15 +128,20 @@
         </td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">3</td>
-        <td class="progress">Hadoop</td>
-        <td class="progress align-center">
+        <td class="complete">3</td>
+        <td class="complete">Hadoop</td>
+        <td class="complete align-center">
             <div class="align-center">
                 [NameNode 01] <br/> - 50070 (NameNode Web UI)<br/>- 8088 (YARN RM Web UI)<br/>
             </div>
             <br/>
             <div class="align-center">
                 [NameNode 02] <br/> - 50080 (NameNoe Web UI)<br/>- 8089 (YARN RM Web UI)<br/>
+            </div>
+        </td>
+        <td class="complete">
+            <div class="align-center">
+                Zookeeper <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
         </td>
     </tr>
@@ -175,6 +180,12 @@
         <td>7</td>
         <td>Phoenix</td>
         <td>8765</td>
+    </tr>
+    <tr style="text-align: center">
+        <td class="complete">8</td>
+        <td class="complete">PostgreSQL</td>
+        <td class="complete">15432</td>
+        <td class="complete">none</td>
     </tr>
 </table>
 

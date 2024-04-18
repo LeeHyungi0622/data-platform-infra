@@ -12,7 +12,8 @@
 # * ------------------------------------------------------------------
 # * 2024/04/17  이현기 (Lee Hyungi)    Zookeeper, Kafka 서비스 작성
 # * ------------------------------------------------------------------
-# * 2024/04/18  이현기 (Lee Hyungi)    HDFS 서비스 작성
+# * 2024/04/18  이현기 (Lee Hyungi)    HDFS 서비스 작성 (NN 2개, DN 3개)
+# *                                  MetaStore 서비스 작성
 # * ------------------------------------------------------------------
 # * 
 # /******************************************************************/
@@ -114,6 +115,10 @@ services:
     ports:
       - 50070:50070
       - 8088:8088
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
   nn02:
     image: hadoop_base:latest
     container_name: nn02
@@ -122,21 +127,37 @@ services:
     ports:
       - 50080:50070
       - 8089:8088
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
   dn01:
     image: hadoop_base:latest
     container_name: dn01
     hostname: dn01
     entrypoint: /entrypoint.sh zkdatanode
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
   dn02:
     image: hadoop_base:latest
     container_name: dn02
     hostname: dn02
     entrypoint: /entrypoint.sh datanode
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
   dn03:
     image: hadoop_base:latest
     container_name: dn03
     hostname: dn03
     entrypoint: /entrypoint.sh datanode
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
 # HDFS 컨테이너 정의 (NN, DN) -- END
 
 # Metadata 컨테이너 정의 (metastore) -- START
@@ -146,7 +167,9 @@ services:
     restart: always
     shm_size: 128mb
     environment:
-      - POSTGRES_PASSWORD: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - 15432:5432
 # Metadata 컨테이너 정의 (metastore) -- END
 
 # Hive 컨테이너 정의 (HS01, HS02) -- START
