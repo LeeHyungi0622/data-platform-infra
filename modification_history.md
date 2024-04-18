@@ -1,7 +1,7 @@
 - HDFS 구성시 수정해야 될 부분
 
-    기존 HDFS 구성시, resource manager와 연동되어있던 zookeeper 설정을 내부 zookeeper가 아닌, 외부 Zookeeper로 연동되도록 수정
-
+    기존 HDFS 구성시, resource manager와 연동되어있던 zookeeper 설정을 내부 zookeeper가 아닌, 외부 Zookeeper로 연동되도록 수정 `(완료)`
+    - Dockerfile 내 /opt/zookeeper 하위에 디렉토리 생성 command 제거 `(완료)`
     - HDFS image (root 경로)파일에서 Zookeeper 설치 및 cfg file 복사 부분 cmd 제거 `(완료)`
     - Docker file 내 cmd 실행에서 읽히고 있는 entrypoint.sh 파일 수정 (zookeeper 실행 부분 수정하기)
 

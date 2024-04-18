@@ -89,11 +89,6 @@ ADD ./config/yarn-site.xml $HADOOP_CONF_DIR/
 
 # 8088, 8089 : RM HA 구성시 Web UI 접속 포트 
 
-# 제외 port
-# 2181 : Zookeeper client port
-# 2888, 3888 : Zookeeper server binding port
-# EXPOSE 8020 8485 8089 2181 2888 3888 8088
-
 EXPOSE 8020 8485 8089 8088
 
 ADD entrypoint.sh /entrypoint.sh
