@@ -1,5 +1,24 @@
 <link rel="stylesheet" href="./styles.css" />
 
+```
+/*****************************************************************************/
+*
+* Copyright         : 2024/04/18 이현기(Lee Hyungi)
+* File Name         : README.md
+* Description       : 해당 파일은 Hadoop EcoSystem 설치 및 구성에 있어 실행에 
+                      필요한 전반적인 내용을 포함하고 있습니다.
+*                    
+* Revision History  :
+* Date		      Author 			Comments
+  2024/04/18  이현기 (Lee Hyungi)     초안 작성
+* ------------------------------------------------------------------
+* 2024/04/17  README.md	            (초안 작성) Hadoop EcoSystem 구성 및 설정내용 작성
+                                              설치 순서 상세내용 작성
+* ------------------------------------------------------------------
+* 
+/****************************************************************************/
+```
+
 # 데이터 플랫폼 구성
 
 ## <u>Hadoop EcoSystem Docker container 구성</u>
@@ -72,17 +91,37 @@
         <th style="text-align: center">index</th>
         <th style="text-align: center">component</th>
         <th style="text-align: center">port</th>
+        <th style="text-align: center">dependencies</th>
         <th style="text-align: center">Configuration</th>
     </tr>
     <tr style="text-align: center">
         <td class="complete">1</td>
         <td class="complete">Zookeeper</td>
-        <td class="complete">2181, 2182, 2183</td>
+        <td class="complete">
+            <div class="align-center">
+                - zoo-1(2181)<br/>
+                - zoo-2(2182)<br/>
+                - zoo-3(2183)
+            </div>
+        </td>
+        <td class="complete">none</td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">2</td>
         <td class="complete">Kafka</td>
-        <td class="complete">29092, 39092, 49092</td>
+        <td class="complete">
+            <div class="align-center">
+                - kafka-1(29092)<br/>
+                - kafka-2(39092)<br/> 
+                - kafka-3(49092)
+            </div>
+        </td>
+        <td class="complete">
+            <div class="align-center">
+                Zookeeper <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
+            </div>
+        </td>
     </tr>
     <tr style="text-align: center">
         <td class="progress">3</td>
@@ -134,3 +173,11 @@
         <td>8765</td>
     </tr>
 </table>
+
+### <u>설치 순서</u>
+
+(1) Zookeeper가 설치된다.
+
+(2) Kafka broker 컨테이너는 Zookeepeer 컨테이너들이 올라간 후에 설치를 진행한다.
+
+(3) 
