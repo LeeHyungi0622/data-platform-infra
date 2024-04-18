@@ -18,8 +18,11 @@
 * 
 /****************************************************************************/
 ```
-
 # 데이터 플랫폼 구성
+
+## <u>시스템 구성도</u>
+
+<img src="./hadoop_ecosystem_infra.png" alt="" />
 
 ## <u>Hadoop EcoSystem Docker container 구성</u>
 
