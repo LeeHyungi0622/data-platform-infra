@@ -116,6 +116,8 @@ services:
     ports:
       - 50070:50070
       - 8088:8088
+    volumes:
+      - hadoop_namenode:/opt/hadoop/dfs/namenode
     depends_on:
       - zoo-1
       - zoo-2
@@ -128,6 +130,8 @@ services:
     ports:
       - 50080:50070
       - 8089:8088
+    volumes:
+      - hadoop_namenode:/opt/hadoop/dfs/namesecondary
     depends_on:
       - zoo-1
       - zoo-2
@@ -137,6 +141,8 @@ services:
     container_name: dn01
     hostname: dn01
     entrypoint: /entrypoint.sh zkdatanode
+    volumes:
+      - hadoop_first_datanode:/opt/hadoop/dfs/datanode
     depends_on:
       - zoo-1
       - zoo-2
@@ -146,6 +152,8 @@ services:
     container_name: dn02
     hostname: dn02
     entrypoint: /entrypoint.sh datanode
+    volumes:
+      - hadoop_second_datanode:/opt/hadoop/dfs/datanode
     depends_on:
       - zoo-1
       - zoo-2
@@ -155,6 +163,8 @@ services:
     container_name: dn03
     hostname: dn03
     entrypoint: /entrypoint.sh datanode
+    volumes:
+      - hadoop_third_datanode:/opt/hadoop/dfs/datanode
     depends_on:
       - zoo-1
       - zoo-2
@@ -171,6 +181,8 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - 15432:5432
+    volumes:
+      - hive_metastore:/var/lib/postgresql/data
 # Metadata 컨테이너 정의 (metastore) -- END
 
 # Hive 컨테이너 정의 (HS01, HS02) -- START
@@ -181,6 +193,8 @@ services:
     command: /entrypoint.sh hs2
     ports:
       - 10000:10000
+    volumes:
+      - hive_first_server:/opt/hive/warehouse
     depends_on:
       - zoo-1
       - zoo-2
@@ -198,6 +212,8 @@ services:
     command: /entrypoint.sh hs2
     ports:
       - 10001:10000
+    volumes:
+      - hive_second_server:/opt/hive/warehouse
     depends_on:
       - zoo-1
       - zoo-2
@@ -210,3 +226,13 @@ services:
       - metastore
 # Hive 컨테이너 정의 (HS01, HS02) -- END
 
+# volumes 생성
+volumes:
+  hadoop_namenode:
+  hadoop_namesecondary:
+  hadoop_first_datanode:
+  hadoop_second_datanode:
+  hadoop_third_datanode:
+  hive_metastore:
+  hive_first_server:
+  hive_second_server:
