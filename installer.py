@@ -12,6 +12,9 @@
 # * 2024/04/18          	        hdfs base 이미지 빌드 스크립트 작성
 # *                      	        metastore 이미지 빌드 스크립트 작성
 # * ------------------------------------------------------------------
+# * 2024/04/19          	        hive 이미지 빌드 스크립트 작성
+# *                      	        
+# * ------------------------------------------------------------------
 # * 
 # /******************************************************************/
 import os
@@ -23,3 +26,6 @@ if sys.argv[1] == "hdfs":
 elif sys.argv[1] == "metastore":
     if sys.argv[2] == "build":
         os.system("docker pull postgres:15.6")
+elif sys.argv[1] == "hive":
+    if sys.argv[2] == "build":
+        os.system("cd ./hive && docker build -t hive_base:latest .")

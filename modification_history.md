@@ -14,9 +14,9 @@
         - zookeeper 서버 시작 스크립트 실행부분 제거 `(완료)`
 
 - Hive 구성시 수정해야 될 부분
-    - entrypoint.sh 파일 사용되고 있는 부분 찾아서 경로 수정하기
-    - 2181 포트 검색 결과 내용 수정
-       - hive/hive-site.xml 파일 (hive.zookeeper.quorum value 수정)
+    - entrypoint.sh 파일 사용되고 있는 부분 찾아서 경로 수정하기 `(완료)`
+    - 2181 포트 검색 결과 내용 수정 `(완료)`
+       - hive/hive-site.xml 파일 (hive.zookeeper.quorum value 수정) `(완료)`
 
 - HBase 구성시 수정해야 될 부분
     - entrypoint.sh 파일 사용되고 있는 부분 찾아서 경로 수정하기

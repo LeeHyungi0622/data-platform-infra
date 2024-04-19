@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+   <property>
+     <name>hive.metastore.local</name>
+     <value>false</value>
+   </property>
+   <property>
+     <name>javax.jdo.option.ConnectionURL</name>
+     <value>jdbc:postgresql://metastore:15432/metastore</value>
+   </property>
+   <property>
+     <name>javax.jdo.option.ConnectionDriverName</name>
+     <value>org.postgresql.Driver</value>
+   </property>
+   <property>
+     <name>javax.jdo.option.ConnectionUserName</name>
+     <value>hive</value>
+   </property>
+   <property>
+     <name>javax.jdo.option.ConnectionPassword</name>
+     <value>123456</value>
+   </property>
+   <property>
+     <name>hive.server2.enable.doAs</name>
+     <value>false</value>
+   </property>
+    <property>
+      <name>tez.lib.uris</name>
+      <value>/app/tez</value>
+    </property>
+
+    <!--# HA from zookeeper -->
+    <property>
+      <name>hive.zookeeper.quorum</name>
+      <value>zoo-1:2181,zoo-2:2182,zoo-3:2183</value>
+    </property>
+    <property>
+      <name>hive.server2.support.dynamic.service.discovery</name>
+      <value>true</value>
+    </property>
+    <property>
+      <name>hive.server2.zookeeper.namespace</name>
+      <value>hiveserver2</value>
+    </property>
+    <property>
+      <name>hive.execution.engine</name>
+      <value>tez</value>
+    </property>
+    <property>
+         <name>hive.tez.container.size</name>
+         <value>-1</value>
+    </property>
+    <!--
+    <property>
+      <name>hive.zookeeper.session.timeout</name>
+      <value>Comma separated list of zookeeper quorum</value>
+    </property>
+    -->
+</configuration>

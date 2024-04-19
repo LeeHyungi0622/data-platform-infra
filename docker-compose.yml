@@ -173,5 +173,39 @@ services:
 # Metadata 컨테이너 정의 (metastore) -- END
 
 # Hive 컨테이너 정의 (HS01, HS02) -- START
-
+  hs01:
+    image: hive_base:latest
+    container_name: hs01
+    hostname: hs01
+    command: /entrypoint.sh hs2
+    ports:
+      - 10000:10000
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
+      - nn01
+      - nn02
+      - dn01
+      - dn02
+      - dn03
+      - metastore
+  hs02:
+    image: hive_base:latest
+    container_name: hs02
+    hostname: hs02
+    command: /entrypoint.sh hs2
+    ports:
+      - 10001:10000
+    depends_on:
+      - zoo-1
+      - zoo-2
+      - zoo-3
+      - nn01
+      - nn02
+      - dn01
+      - dn02
+      - dn03
+      - metastore
 # Hive 컨테이너 정의 (HS01, HS02) -- END
+

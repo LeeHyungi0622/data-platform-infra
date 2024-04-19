@@ -56,16 +56,16 @@
         <td class="complete">3.3.6</td>
     </tr>
     <tr style="text-align: center">
-        <td>4</td>
-        <td>Hive</td>
-        <td>자체 제작 이미지 사용</td>
-        <td>4.0.0</td>
+        <td class="complete">4</td>
+        <td class="complete">Hive</td>
+        <td class="complete">자체 제작 이미지 사용</td>
+        <td class="complete">4.0.0</td>
     </tr>
     <tr style="text-align: center">
-        <td>5</td>
-        <td>Tez</td>
-        <td>Hive 이미지 생성시 내부에 Engine 설치 및 환경설정</td>
-        <td>0.10.3</td>
+        <td class="complete">5</td>
+        <td class="complete">Tez</td>
+        <td class="complete">Hive 이미지 생성시 내부에 Engine 설치 및 환경설정</td>
+        <td class="complete">0.10.3</td>
     </tr>
     <tr style="text-align: center">
         <td>6</td>
@@ -123,7 +123,7 @@
         </td>
         <td class="complete">
             <div class="align-center">
-                Zookeeper <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
+                [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
         </td>
     </tr>
@@ -141,27 +141,41 @@
         </td>
         <td class="complete">
             <div class="align-center">
-                Zookeeper <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
+                [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
         </td>
     </tr>
     <tr style="text-align: center">
-        <td>4</td>
-        <td>Hive</td>
-        <td>
+        <td class="complete">4</td>
+        <td class="complete">Hive</td>
+        <td class="complete">
             <div class="align-center">
                 [HiveServer 01] <br/> - 10000
             </div>
             <br/>
             <div class="align-center">
-                [HiveServer 02] <br/> - 10001
+                [HiveServer 02] <br/> - 10002
+            </div>
+        </td>
+        <td class="complete">
+            <div class="align-center">
+                [Zookeeper] <br/> - zoo-1<br/>- zoo-2<br/>- zoo-3
+            </div>
+            <br/>
+            <div class="align-center">
+                [Hadoop] <br/> - nn01<br/>- nn02<br/>- dn01<br/>- dn02<br/>- dn03
+            </div>
+            <br/>
+            <div class="align-center">
+                [Metastore] <br/> - metastore
             </div>
         </td>
     </tr>
     <tr style="text-align: center">
-        <td>5</td>
-        <td>Tez</td>
-        <td>(Hive Execution Engine)</td>
+        <td class="complete">5</td>
+        <td class="complete">Tez</td>
+        <td class="complete">(Hive Execution Engine)</td>
+        <td class="complete">Hive 내부에 구성</td>
     </tr>
     <tr style="text-align: center">
         <td>6</td>
@@ -175,11 +189,13 @@
                 [HRegionServer 01 / 02 / 03] <br/> - 16020 / TBD / TBD
             </div>
         </td>
+        <td></td>
     </tr>
     <tr style="text-align: center">
         <td>7</td>
         <td>Phoenix</td>
         <td>8765</td>
+        <td></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
@@ -195,10 +211,13 @@
 
 - hadoop_base 이미지 빌드하기
     ```zsh   
-    $ node installer.js hdfs build
+    $ python installer.py hdfs build
     ```
 
-- 
+- postgreSQL 이미지 빌드하기
+    ```zsh
+    $ python installer.py 
+    ```
 
 (1) Zookeeper가 설치된다.
 
