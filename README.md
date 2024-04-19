@@ -10,11 +10,14 @@
 *                    
 * Revision History  :
 * Date		      Author 			Comments
-  2024/04/18  이현기 (Lee Hyungi)     초안 작성
-* ------------------------------------------------------------------
-* 2024/04/17  README.md	            (초안 작성) Hadoop EcoSystem 구성 및 설정내용 작성
+  2024/04/17  이현기 (Lee Hyungi)     초안 작성
+* -----------------------------------------------------------------------------
+* 2024/04/18        	            (초안 작성) Hadoop EcoSystem 구성 및 설정내용 작성
                                               설치 순서 상세내용 작성
-* ------------------------------------------------------------------
+* -----------------------------------------------------------------------------
+* 2024/04/19        	            (초안 작성) Hive, Postgres 구성 및 설정내용 작성
+                                              종합 설치 방법에 대해 상세내용 작성
+* -----------------------------------------------------------------------------
 * 
 /****************************************************************************/
 ```
@@ -36,54 +39,63 @@
         <th style="text-align: center">component</th>
         <th style="text-align: center">image</th>
         <th style="text-align: center">version</th>
+        <th style="text-align: center">release date</th>
     </tr>
     <tr style="text-align: center">
         <td class="complete">1</td>
         <td class="complete">Zookeeper</td>
         <td class="complete">Docker official image</td>
         <td class="complete">3.9.2</td>
+        <td class="complete">2024/04/16</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">2</td>
         <td class="complete">Kafka</td>
         <td class="complete">Official Confluent Docker Image <br/>(Community)</td>
         <td class="complete">7.4.4</td>
+        <td class="complete">2024/04/11</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">3</td>
         <td class="complete">Hadoop</td>
         <td class="complete">자체 제작 이미지 사용</td>
         <td class="complete">3.3.6</td>
+        <td class="complete">2023/06/23</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">4</td>
         <td class="complete">Hive</td>
         <td class="complete">자체 제작 이미지 사용</td>
         <td class="complete">4.0.0</td>
+        <td class="complete">2024/03/29</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">5</td>
         <td class="complete">Tez</td>
         <td class="complete">Hive 이미지 생성시 내부에 Engine 설치 및 환경설정</td>
         <td class="complete">0.10.3</td>
+        <td class="complete">2024/01/31</td>
     </tr>
     <tr style="text-align: center">
-        <td>6</td>
-        <td>HBase</td>
-        <td>자체 제작 이미지 사용</td>
-        <td>2.5.8</td>
+        <td class="progress">6</td>
+        <td class="progress">HBase</td>
+        <td class="progress">자체 제작 이미지 사용</td>
+        <td class="progress">2.5.8</td>
+        <td class="progress">2024/03/12</td>
     </tr>
     <tr style="text-align: center">
-        <td>7</td>
-        <td>Phoenix</td>
-        <td>자체 제작 이미지 사용</td>
-        <td>5.1.3</td>
+        <td class="progress">7</td>
+        <td class="progress">Phoenix</td>
+        <td class="progress">자체 제작 이미지 사용</td>
+        <td class="progress">5.2.0</td>
+        <td class="progress">2024/04/16</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
         <td class="complete">PostgreSQL</td>
         <td class="complete">Docker official image</td>
         <td class="complete">15.6</td>
+        <td class="complete">2024/02/08</td>
     </tr>
 </table>
 
@@ -178,9 +190,9 @@
         <td class="complete">Hive 내부에 구성</td>
     </tr>
     <tr style="text-align: center">
-        <td>6</td>
-        <td>HBase</td>
-        <td>
+        <td class="progress">6</td>
+        <td class="progress">HBase</td>
+        <td class="progress">
             <div class="align-center">
                 [HMaster 01 / 02] <br/> - 16000 / TBD
             </div>
@@ -189,13 +201,31 @@
                 [HRegionServer 01 / 02 / 03] <br/> - 16020 / TBD / TBD
             </div>
         </td>
-        <td></td>
+        <td class="progress">
+            <div class="align-center">
+                [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
+            </div>
+            <br/>        
+            <div class="align-center">
+                [Hadoop] <br/>- nn01<br/>- nn02<br/>- dn01<br/>- dn02<br/>- dn03
+            </div>        
+        </td>
     </tr>
     <tr style="text-align: center">
-        <td>7</td>
-        <td>Phoenix</td>
-        <td>8765</td>
-        <td></td>
+        <td class="progress">7</td>
+        <td class="progress">Phoenix</td>
+        <td class="progress">8765</td>
+        <td class="progress">
+            <div class="align-center">
+                [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
+            </div>        
+            <div class="align-center">
+                [Hadoop] <br/>- nn01<br/>- nn02<br/>- dn01<br/>- dn02<br/>- dn03
+            </div>        
+            <div class="align-center">
+                [HBase] <br/>- master01<br/>- master02<br/>- region_server01<br/>- region_server02<br/>- region_server03
+            </div>        
+        </td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
@@ -205,22 +235,12 @@
     </tr>
 </table>
 
-### <u>설치 순서</u>
+### <u>설치 방법</u>
 
-(1) Hadoop 설치하기
+(1) Hadoop EcoSystem 설치하기
 
-- hadoop_base 이미지 빌드하기
+- 아래 명령어를 실행하면, 필요한 도커 이미지 빌드 및 docker-compose.yml 파일이 실행됩니다.
+
     ```zsh   
-    $ python installer.py hdfs build
+    $ python installer.py all start
     ```
-
-- postgreSQL 이미지 빌드하기
-    ```zsh
-    $ python installer.py 
-    ```
-
-(1) Zookeeper가 설치된다.
-
-(2) Kafka broker 컨테이너는 Zookeepeer 컨테이너들이 올라간 후에 설치를 진행한다.
-
-(3) 

@@ -34,12 +34,12 @@ ADD ./config/sshd_config /etc/ssh/
 
 #
 # Hadoop Install
-# 2024/03/17 Release 3.4.0
+# 2023/06/23 Release 3.3.6
 #
-ENV HADOOP_VERSION=3.4.0
+ENV HADOOP_VERSION=3.3.6
 ENV HADOOP_URL=http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 
-# Hadoop 3.4.0 버전을 내려받고 /opt/hadoop에 압축 해제
+# Hadoop 3.3.6 버전을 내려받고 /opt/hadoop에 압축 해제
 RUN curl -fSL "$HADOOP_URL" -o /tmp/hadoop.tar.gz \
     && tar -xvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz

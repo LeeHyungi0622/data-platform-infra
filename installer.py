@@ -19,13 +19,29 @@
 # /******************************************************************/
 import os
 import sys
+import time
 
-if sys.argv[1] == "hdfs":
-    if sys.argv[2] == "build":
+if sys.argv[1] == "all":
+    if sys.argv[2] == "start":
+        time.sleep(2)
+        print("Hadoop 자체 이미지 생성이 시작되었습니다.")
         os.system("docker build -t hadoop_base:latest .")
-elif sys.argv[1] == "metastore":
-    if sys.argv[2] == "build":
+        print("Hadoop 자체 이미지 생성이 완료되었습니다.")
+        time.sleep(2)
+        print("PostgreSQL 15.6 공식 이미지 Pull이 시작되었습니다.")
         os.system("docker pull postgres:15.6")
-elif sys.argv[1] == "hive":
-    if sys.argv[2] == "build":
+        print("PostgreSQL 15.6 공식 이미지 Pull이 완료되었습니다.")
+        time.sleep(2)
+        print("Hive 자체 이미지 생성이 시작되었습니다.")
         os.system("cd ./hive && docker build -t hive_base:latest .")
+        print("Hive 자체 이미지 생성이 완료되었습니다.")
+        time.sleep(2)
+        print("confluentinc/cp-kafka 7.4.4 공식 이미지 Pull이 시작되었습니다.")
+        os.system("docker pull confluentinc/cp-kafka:7.4.4")
+        print("confluentinc/cp-kafka 7.4.4 공식 이미지 Pull이 완료되었습니다.")
+        time.sleep(2)
+        print("zookeeper:latest 공식 이미지 Pull이 시작되었습니다.")     
+        os.system("docker pull zookeeper:latest")
+        print("zookeeper:latest 공식 이미지 Pull이 완료되었습니다.")     
+        time.sleep(3)
+        os.system("docker-compose up -d")
