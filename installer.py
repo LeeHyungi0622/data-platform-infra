@@ -21,6 +21,9 @@ import os
 import sys
 import time
 
+hbase_version = '2.5.8'
+phoenix_version = '5.2.0'
+
 if sys.argv[1] == "all":
     if sys.argv[2] == "start":
         time.sleep(2)
@@ -43,5 +46,21 @@ if sys.argv[1] == "all":
         print("zookeeper:latest 공식 이미지 Pull이 시작되었습니다.")     
         os.system("docker pull zookeeper:latest")
         print("zookeeper:latest 공식 이미지 Pull이 완료되었습니다.")     
+        time.sleep(2)
+        print("HBase 자체 base 이미지 빌드가 시작되었습니다.")
+        os.system(f"docker build -t hbase-{hbase_version} ./hbase/base")
+        print("HBase base 이미지 빌드가 완료되었습니다.")
+        time.sleep(2)
+        print("HBase 자체 HMaster 이미지 빌드가 시작되었습니다.")
+        os.system(f"docker build -t hbase-master-{hbase_version} ./hbase/hmaster")
+        print("HBase 자체 HMaster 이미지 빌드가 완료되었습니다.")
+        time.sleep(2)
+        print("HBase 자체 HMaster 이미지 빌드가 시작되었습니다.")
+        os.system(f"docker build -t hbase-regionserver-{hbase_version} ./hbase/hregionserver")
+        print("HBase 자체 HMaster 이미지 빌드가 완료되었습니다.")
+        time.sleep(2)
+        print("HBase 자체 Phoenix 이미지 빌드가 시작되었습니다.")
+        os.system(f"docker build --platform linux/amd64 -t phoenix-{phoenix_version} ./phoenix")
+        print("HBase 자체 Phoenix 이미지 빌드가 시작되었습니다.")
         time.sleep(3)
         os.system("docker-compose up -d")

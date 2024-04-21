@@ -29,23 +29,23 @@
     </property>
     <property>
         <name>dfs.ha.namenodes.hadoop-cluster</name>
-        <value>nn1,nn2</value>
+        <value>nn01,nn02</value>
     </property>
 
     <property>
-        <name>dfs.namenode.rpc-address.hadoop-cluster.nn1</name>
+        <name>dfs.namenode.rpc-address.hadoop-cluster.nn01</name>
         <value>nn01:8020</value>
     </property>
     <property>
-        <name>dfs.namenode.rpc-address.hadoop-cluster.nn2</name>
+        <name>dfs.namenode.rpc-address.hadoop-cluster.nn02</name>
         <value>nn02:8020</value>
     </property>
     <property>
-        <name>dfs.namenode.http-address.hadoop-cluster.nn1</name>
+        <name>dfs.namenode.http-address.hadoop-cluster.nn01</name>
         <value>nn01:50070</value>
     </property>
     <property>
-        <name>dfs.namenode.http-address.hadoop-cluster.nn2</name>
+        <name>dfs.namenode.http-address.hadoop-cluster.nn02</name>
         <value>nn02:50070</value>
     </property>
 
@@ -69,6 +69,15 @@
     </property>
     <property>
         <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+    <!-- HBase 관련 설정 추가 -->
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://hadoop-cluster/hbase</value>
+    </property>
+    <property>
+        <name>hbase.cluster.distributed</name>
         <value>true</value>
     </property>
 </configuration>
