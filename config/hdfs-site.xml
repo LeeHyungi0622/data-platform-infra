@@ -38,7 +38,7 @@
     </property>
     <property>
         <name>dfs.namenode.rpc-address.hadoop-cluster.nn02</name>
-        <value>nn02:8020</value>
+        <value>nn02:8022</value>
     </property>
     <property>
         <name>dfs.namenode.http-address.hadoop-cluster.nn01</name>
@@ -46,7 +46,7 @@
     </property>
     <property>
         <name>dfs.namenode.http-address.hadoop-cluster.nn02</name>
-        <value>nn02:50070</value>
+        <value>nn02:50080</value>
     </property>
 
     <property>
