@@ -4,7 +4,7 @@
 # Author: 이현기(Lee Hyungi)
 #
 
-from centos:7
+FROM centos:7
 
 #
 # CentOS Default Install

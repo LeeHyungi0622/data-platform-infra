@@ -77,18 +77,18 @@
         <td class="complete">2024/01/31</td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">6</td>
-        <td class="progress">HBase</td>
-        <td class="progress">자체 제작 이미지 사용</td>
-        <td class="progress">2.5.8</td>
-        <td class="progress">2024/03/12</td>
+        <td class="complete">6</td>
+        <td class="complete">HBase</td>
+        <td class="complete">자체 제작 이미지 사용</td>
+        <td class="complete">2.5.0</td>
+        <td class="complete">2024/03/12</td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">7</td>
-        <td class="progress">Phoenix</td>
-        <td class="progress">자체 제작 이미지 사용</td>
-        <td class="progress">5.2.0</td>
-        <td class="progress">2024/04/16</td>
+        <td class="complete">7</td>
+        <td class="complete">Phoenix</td>
+        <td class="complete">자체 제작 이미지 사용</td>
+        <td class="complete">5.2.0</td>
+        <td class="complete">2024/04/16</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
@@ -190,9 +190,9 @@
         <td class="complete">Hive 내부에 구성</td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">6</td>
-        <td class="progress">HBase</td>
-        <td class="progress">
+        <td class="complete">6</td>
+        <td class="complete">HBase</td>
+        <td class="complete">
             <div class="align-center">
                 [HMaster 01 / 02] <br/> - 16000 / TBD
             </div>
@@ -201,7 +201,7 @@
                 [HRegionServer 01 / 02 / 03] <br/> - 16020 / TBD / TBD
             </div>
         </td>
-        <td class="progress">
+        <td class="complete">
             <div class="align-center">
                 [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
@@ -212,10 +212,10 @@
         </td>
     </tr>
     <tr style="text-align: center">
-        <td class="progress">7</td>
-        <td class="progress">Phoenix</td>
-        <td class="progress">8765</td>
-        <td class="progress">
+        <td class="complete">7</td>
+        <td class="complete">Phoenix</td>
+        <td class="complete">8765</td>
+        <td class="complete">
             <div class="align-center">
                 [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>        
