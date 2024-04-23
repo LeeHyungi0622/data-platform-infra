@@ -74,15 +74,35 @@
         <td class="complete">4</td>
         <td class="complete">Hive</td>
         <td class="complete">자체 제작 이미지 사용</td>
-        <td class="complete">4.0.0</td>
-        <td class="complete">2024/03/29</td>
+        <td class="complete">
+            <div class="align-center">
+                4.0.0 <br/>
+                2.0.0
+            </div>
+        </td>
+        <td class="complete">
+            <div class="align-center">
+                2024/03/29
+                2016/02/15
+            </div>
+        </td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">5</td>
         <td class="complete">Tez</td>
         <td class="complete">Hive 이미지 생성시 내부에 Engine 설치 및 환경설정</td>
-        <td class="complete">0.10.3</td>
-        <td class="complete">2024/01/31</td>
+        <td class="complete">
+            <div class="align-center">
+                0.10.3 <br/>
+                0.8.5
+            </div>
+        </td>
+        <td class="complete">
+            <div class="align-center">
+                2024/01/31<br/>
+                2017/03/13
+            </div>
+        </td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">6</td>

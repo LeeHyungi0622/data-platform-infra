@@ -26,7 +26,7 @@ ENV HIVE_HOME /opt/hive
 ENV PATH $HIVE_HOME/bin:$PATH
 
 #
-# MYSQL 연동을 위한 JDBC 설치
+# Postgresql 연동을 위한 JDBC 설치
 #
 ENV CONNECTOR_URL=https://jdbc.postgresql.org/download/postgresql-42.2.19.jar
 
