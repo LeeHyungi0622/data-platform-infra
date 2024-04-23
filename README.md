@@ -80,15 +80,15 @@
         <td class="complete">6</td>
         <td class="complete">HBase</td>
         <td class="complete">자체 제작 이미지 사용</td>
-        <td class="complete">2.5.0</td>
-        <td class="complete">2024/03/12</td>
+        <td class="complete">2.0.0</td>
+        <td class="complete">2018/05/04</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">7</td>
         <td class="complete">Phoenix</td>
         <td class="complete">자체 제작 이미지 사용</td>
-        <td class="complete">5.2.0</td>
-        <td class="complete">2024/04/16</td>
+        <td class="complete">5.0.0</td>
+        <td class="complete">2020/07/06</td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
