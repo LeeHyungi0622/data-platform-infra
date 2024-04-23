@@ -21,8 +21,8 @@ import os
 import sys
 import time
 
-hbase_version = '2.5.0'
-phoenix_version = '5.2.0'
+hbase_version = '2.0.0'
+phoenix_version = '5.0.0'
 
 if sys.argv[1] == "all":
     if sys.argv[2] == "start":

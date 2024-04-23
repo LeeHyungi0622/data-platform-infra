@@ -1,7 +1,7 @@
 FROM smizy/hbase:1.3-alpine
 
 ARG BUILD_DATE="2024-04-21"
-ARG VERSION="5.2.0"
+ARG VERSION="5.0.0"
 
 LABEL \
     maintainer="milnomada" \
@@ -13,9 +13,9 @@ LABEL \
     org.label-schema.vcs-type="Git" \
     org.label-schema.vcs-url="https://github.com/milnomada/docker-hbase-phoenix"
 
-ENV PHOENIX_VERSION   5.2.0
+ENV PHOENIX_VERSION   5.0.0
 # Updated
-ENV HBASE_VER         2.5.0
+ENV HBASE_VER         2.0
 
 ENV PHOENIX_HOME      /usr/local/phoenix-${PHOENIX_VERSION}
 ENV MIRROR_URL        "https://archive.apache.org/dist"
@@ -30,13 +30,13 @@ RUN set -x \
         python \
         wget \
     && mirror_url=$MIRROR_URL \
-    && package_name="phoenix-${PHOENIX_VERSION}" \
-    && wget -q -O - ${mirror_url}/phoenix/${package_name}/phoenix-hbase-2.5.0-$PHOENIX_VERSION-bin.tar.gz \
+    && package_name="apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_VER}" \
+    && wget -q -O - ${mirror_url}/phoenix/${package_name}/bin/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_VER}-bin.tar.gz \
         | tar -xzf - -C /usr/local \
-    && mv /usr/local/phoenix-hbase-2.5.0-$PHOENIX_VERSION-bin ${PHOENIX_HOME} \
+    && mv /usr/local/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_VER}-bin ${PHOENIX_HOME} \
     && cd ${PHOENIX_HOME} \
     && mkdir -p server \
-    && mv *-server-*.jar server/
+    && mv *-server.jar server/
     ## cleanup    
     ## && rm *-tests.jar *-sources.jar 
 

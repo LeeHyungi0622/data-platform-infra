@@ -234,7 +234,7 @@ services:
 
 # HBase 컨테이너 정의 (hbase-master, hbase-region) -- START
   hbase-master:
-    image: hbase-master-2.5.0
+    image: hbase-master-2.0.0
     container_name: hbase-master
     hostname: hbase-master
     env_file:
@@ -242,7 +242,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "nn01:50070 nn02:50080 zoo-1:2181 zoo-2:2182 zoo-3:2183"
     command:
-      - /opt/hbase-2.5.0/bin/hbase master start
+      - /opt/hbase-2.0.0/bin/hbase master start
     ports:
       - 16010:16010
     depends_on:
@@ -255,8 +255,8 @@ services:
       - dn02
       - dn03
 
-  hregion-region:
-    image: hbase-regionserver-2.5.0
+  hbase-regionserver:
+    image: hbase-regionserver-2.0.0
     container_name: hbase-regionserver
     hostname: hbase-regionserver
     env_file:
@@ -264,7 +264,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "nn01:50070 nn02:50080 zoo-1:2181 zoo-2:2182 zoo-3:2183 hbase-master:16010"
     command:
-      - /opt/hbase-2.5.0/bin/hbase regionserver start
+      - /opt/hbase-2.0.0/bin/hbase regionserver start
     ports:
       - 16020:16020
       - 16030:16030
@@ -283,7 +283,7 @@ services:
 # Phoenix queryserver 컨테이너 정의 (queryserver-1) -- START
   queryserver:
     container_name: queryserver
-    image: phoenix-5.2.0
+    image: phoenix-5.0.0
     ports:
       - 8765:8765
     depends_on: 
@@ -296,14 +296,14 @@ services:
       - dn02
       - dn03
       - hbase-master
-      - hregion-region
+      - hbase-regionserver
     environment:
       - HBASE_ZOOKEEPER_QUORUM=zoo-1:2181
       - HADOOP_NAMENODE1_HOSTNAME=nn01
       - HBASE_HMASTER1_HOSTNAME=hbase-master
       - HBASE_REGIONSERVER1_HOSTNAME=hbase-regionserver
       - HBASE_ROOT_DIR=hdfs://nn01:8020/hbase
-    command: bin/sqlline.py zoo-1:2181:/hbase
+    command: bin/queryserver.py
 
 
 
