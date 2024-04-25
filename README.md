@@ -166,6 +166,7 @@
                 [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
         </td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">3</td>
@@ -184,6 +185,7 @@
                 [Zookeeper] <br/>- zoo-1<br/>- zoo-2<br/>- zoo-3
             </div>
         </td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">4</td>
@@ -210,12 +212,14 @@
                 [Metastore] <br/> - metastore
             </div>
         </td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">5</td>
         <td class="complete">Tez</td>
         <td class="complete">(Hive Execution Engine)</td>
         <td class="complete">Hive 내부에 구성</td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">6</td>
@@ -238,6 +242,7 @@
                 [Hadoop] <br/>- nn01<br/>- nn02<br/>- dn01<br/>- dn02<br/>- dn03
             </div>        
         </td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">7</td>
@@ -254,12 +259,14 @@
                 [HBase] <br/>- master01<br/>- master02<br/>- region_server01<br/>- region_server02<br/>- region_server03
             </div>        
         </td>
+        <td class="complete"></td>
     </tr>
     <tr style="text-align: center">
         <td class="complete">8</td>
         <td class="complete">PostgreSQL</td>
         <td class="complete">15432</td>
         <td class="complete">none</td>
+        <td class="complete"></td>
     </tr>
 </table>
 
