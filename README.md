@@ -82,7 +82,7 @@
         </td>
         <td class="complete">
             <div class="align-center">
-                2024/03/29
+                2024/03/29 <br/>
                 2016/02/15
             </div>
         </td>
