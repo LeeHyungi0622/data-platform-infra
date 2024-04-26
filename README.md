@@ -40,7 +40,6 @@
 
 ### <u>Hadoop EcoSystem version 구성</u>
 
-`yellow : 작성완료` `pink : 진행중`
 <table>
     <tr>
         <th style="text-align: center">index</th>
